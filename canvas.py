@@ -1,4 +1,5 @@
 ##Canvas (Paint) Application in python to input equation from user ##
+##Specify image path on which you wanna doodle at line 38 ##
 ##Exit using Esc key ##
 
 #importing libraries
