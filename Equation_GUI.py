@@ -1,5 +1,5 @@
 from tkinter import *
-import paint_app as can
+import canvas as can
 import segmentation_expo_position as segexp
 import Model_Detection as dmodel
 import plot
