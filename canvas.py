@@ -35,7 +35,7 @@ def paint_draw(event, former_x, former_y, flags, param):
 
 #canvas application
 
-image = cv2.imread("base_wb.jpg")  #specify image name in current directory
+image = cv2.imread("white_base.png")  #specify image name in current directory
 cv2.namedWindow("OpenCV Paint Brush")
 cv2.setMouseCallback('OpenCV Paint Brush', paint_draw)
 while True:
