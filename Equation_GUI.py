@@ -3,21 +3,23 @@ import paint_app as can
 import segmentation_expo_position as segexp
 import Model_Detection as dmodel
 import plot
+import solve
 equation=""
 def solvefun():
        global equation
        segexp.segstart()                           # Segment the image obtained after drawing and savein current directory
-       equation,type, roots = str(dmodel.detect())          ### Call function detect from Detection_Model python file in same directory ###
-
+       equation = str(dmodel.detect())          ### Call function detect from Detection_Model python file in same directory ###
+       roots = solve.solveIt(equation)
        w = Label(root, text=type, font=("times new roman", 16, "bold"), pady=1, bg='#AEE7FB')
        w.place(x=130, y=378, height=50, width=370)
        w = Label(root, text=roots, font=("times new roman", 16, "bold"), pady=1, bg='#AEE7FB')
        w.place(x=130, y=478, height=50, width=370)
+       print(roots)
 
 
 def graph():
    global equation
-   plot.plotgraph(equation)                  ### Call plotgraph from plot.py
+   plot.plotgraph(equation) 
 
 if __name__ == "__main__":
    # create a GUI window
@@ -50,6 +52,6 @@ if __name__ == "__main__":
    w.place(x=120,y=450,height=80,width=390)
   
    button3 = Button(root, text='Get the graph ', fg='black', bg='#AEE7FB', font=("times new roman",16, "bold"),
-                    command=solvefun, height=2, width=16)
+                    command=graph, height=2, width=16)
    button3.place(x=140,y=580,height=90,width=350)
    root.mainloop()
